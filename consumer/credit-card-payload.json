@@ -1,0 +1,59 @@
+[
+  {
+    "user": {
+      "id": "some_universal_unique_id",
+      "name": "Alice Santos",
+      "username": "alice_santos"
+    },
+    "card_data": {
+      "brand": "VISA",
+      "number": "4380121241272745",
+      "bank": "BANCO BRADESCO, S.A.",
+      "name": "Alice Santos",
+      "address": "Rua Santo Dias da Silva 459",
+      "country": "BRAZIL",
+      "cvv": "446",
+      "expiry": "10/2026",
+      "pin": "1234"
+    },
+    "total_purchase": 1250.0
+  },
+  {
+    "user": {
+      "id": "some_universal_unique_id",
+      "name": "Marg Lind",
+      "username": "marglind"
+    },
+    "card_data": {
+      "brand": "VISA",
+      "number": "4629548256783664",
+      "bank": "BANCO BRADESCO, S.A.",
+      "name": "Marg Lind",
+      "address": "Rua Seis 42",
+      "country": "BRAZIL",
+      "cvv": "382",
+      "expiry": "03/2030",
+      "pin": "456"
+    },
+    "total_purchase": 712
+  },
+  {
+    "user": {
+      "id": "some_universal_unique_id",
+      "name": "Cirilo Bruce",
+      "username": "bruce_wayne"
+    },
+    "card_data": {
+      "brand": "VISA",
+      "number": "4766072627595346",
+      "bank": "BANCO BRADESCO, S.A.",
+      "name": "Cirilo Bruce",
+      "address": "Praça Maria das Graças Pereira Martins 1503",
+      "country": "BRAZIL",
+      "cvv": "144",
+      "expiry": "02/2027",
+      "pin": "6669"
+    },
+    "total_purchase": 254.33
+  }
+]
