@@ -39,7 +39,9 @@ O SQS disponibiliza dois tipos de filas de mensagem, a **padrão**, que devem se
 ## Funcionalidades gerais das filas
 
 - Filas e mensagens ilimitadas
-- Mensagens de até 256 KB de texto em qualquer formato. Cada 64KB de dados é cobrado como 1 solicitação. Para enviar payloads maiores que 256 KB pode-se utilizar a biblioteca de cliente estendida para Java do Amazon SQS, que usa o Amazon S3 para armazenar o payload da mensagem, sendo enviado a key do arquivo no Bucket da AWS como body na mensagem do SQS.
+- Mensagens de até 256 KB de texto em qualquer formato.
+  - Cada 64KB de dados é cobrado como 1 solicitação.
+    - Para enviar payloads maiores que 256 KB pode-se utilizar a biblioteca de cliente estendida para Java do Amazon SQS, que usa o Amazon S3 para armazenar o payload da mensagem, sendo enviado a key do arquivo no Bucket da AWS como body na mensagem do SQS.
 - Envio de mensagens em lotes de até 10 mensagens ou 256 KB. O custo do lote é o mesmo de mensagens únicas, o que significa que podemos diminuir ainda mais os custos para envios agrupados em lotes.
 - É possível reduzir custos com chamadas utilizando Long Pooling, podendo uma chamada aguardar até 20 segundos por uma mensagem. As requisições que utilizam Long Pooling possuem os mesmos custos que uma requisição normal.
 - Retenção de uma mensagem na fila em até 14 dias.
