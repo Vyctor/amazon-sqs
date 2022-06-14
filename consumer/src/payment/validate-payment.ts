@@ -1,51 +1,40 @@
-interface PaymentData {
-  user: {
-    id: string;
-    name: string;
-    username: string;
-  };
-  card_data: {
-    brand: string;
-    number: string;
-    bank: string;
-    name: string;
-    address: string;
-    country: string;
-    cvv: number;
-    expire: string;
-    pin: string;
-  };
+interface ValidatePaymentData {
   total_purchase: number;
+  card_expire_data: string;
 }
 
 class ValidatePayment {
-  public execute(paymentData: PaymentData): boolean {
+  public execute(paymentData: ValidatePaymentData): boolean {
     try {
       this.validateUserMoney(paymentData.total_purchase);
-      this.validateCardExpiration(paymentData.card_data.expire);
-
-      return true;
+      this.validateCardExpiration(paymentData.card_expire_data);
     } catch (error) {
       const result = (error as Error).message;
       throw new Error(result);
     }
+
+    return true;
   }
 
-  private validateUserMoney(total_purchase: number) {
-    const credit_limit = Number.parseFloat(Math.random().toPrecision(2));
+  private validateUserMoney(total_purchase: number): void {
+    const credit_limit = Math.random() * 1500;
 
     if (credit_limit < total_purchase) {
-      throw new Error('User has not enough credit to pay');
+      throw new Error(`User has not enough credit to pay. Credit Limit: ${credit_limit} - Total Purchase: ${total_purchase}`);
     }
   }
 
-  private validateCardExpiration(expire: string) {
+  private validateCardExpiration(expire: string): void {
     const [month, year] = expire.split('/');
 
     const expire_date = new Date().setFullYear(Number.parseInt(year, 10), Number.parseInt(month, 10), 0);
     const current_date = new Date().setFullYear(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
 
-    return current_date > expire_date;
+    const credit_card_is_expired = expire_date < current_date;
+
+    if (credit_card_is_expired) {
+      throw new Error('Credit card is expired');
+    }
   }
 }
 

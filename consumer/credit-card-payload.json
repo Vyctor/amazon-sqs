@@ -13,7 +13,7 @@
       "address": "Rua Santo Dias da Silva 459",
       "country": "BRAZIL",
       "cvv": "446",
-      "expiry": "10/2026",
+      "expire": "10/2026",
       "pin": "1234"
     },
     "total_purchase": 1250.0
@@ -32,7 +32,7 @@
       "address": "Rua Seis 42",
       "country": "BRAZIL",
       "cvv": "382",
-      "expiry": "03/2030",
+      "expire": "03/2030",
       "pin": "456"
     },
     "total_purchase": 712
@@ -51,7 +51,7 @@
       "address": "Praça Maria das Graças Pereira Martins 1503",
       "country": "BRAZIL",
       "cvv": "144",
-      "expiry": "02/2027",
+      "expire": "02/2027",
       "pin": "6669"
     },
     "total_purchase": 254.33

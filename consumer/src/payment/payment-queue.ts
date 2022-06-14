@@ -1,6 +1,8 @@
 import { Consumer } from 'sqs-consumer';
 import * as AWS from 'aws-sdk';
 import https from 'https';
+import PaymentData from './entities/payment-data';
+import RegisterPayment from './register-payment';
 
 AWS.config.update({
   region: process.env.AWS_REGION,
@@ -14,9 +16,15 @@ const paymentQueue = Consumer.create({
   queueUrl: QUEUE_URL,
   batchSize: 10,
   waitTimeSeconds: 20,
-  pollingWaitTimeMs: 5,
   handleMessageBatch: async (messages) => {
-    console.log('messages', messages.length);
+    const registerPayment = new RegisterPayment();
+
+    const promises = messages.map((message) => {
+      const data: PaymentData = JSON.parse(message.Body);
+      return registerPayment.execute(data);
+    });
+
+    await Promise.all(promises);
   },
   sqs: new AWS.SQS({
     httpOptions: {
