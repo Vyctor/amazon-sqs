@@ -22,7 +22,7 @@ class ValidatePayment {
     const userDoesNotHaveEnoughMoney = total_purchase > credit_limit;
 
     if (userDoesNotHaveEnoughMoney) {
-      throw new Error(`User has not enough credit to pay. Credit Limit: ${credit_limit} - Total Purchase: ${total_purchase}`);
+      throw new Error(`User has not enough credit to pay. Credit Limit: $${credit_limit.toFixed(2)} - Total Purchase: $${total_purchase}`);
     }
   }
 
