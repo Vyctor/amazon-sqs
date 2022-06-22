@@ -17,9 +17,11 @@ class ValidatePayment {
   }
 
   private validateUserMoney(total_purchase: number): void {
-    const credit_limit = Math.random() * 1500;
+    const credit_limit = Math.random() * 1750;
 
-    if (credit_limit < total_purchase) {
+    const userDoesNotHaveEnoughMoney = total_purchase > credit_limit;
+
+    if (userDoesNotHaveEnoughMoney) {
       throw new Error(`User has not enough credit to pay. Credit Limit: ${credit_limit} - Total Purchase: ${total_purchase}`);
     }
   }
