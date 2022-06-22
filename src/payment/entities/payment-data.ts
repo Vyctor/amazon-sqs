@@ -3,6 +3,7 @@ interface PaymentData {
     id: string;
     name: string;
     username: string;
+    email: string;
   };
   card_data: {
     brand: string;

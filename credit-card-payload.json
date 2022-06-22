@@ -3,7 +3,8 @@
     "user": {
       "id": "some_universal_unique_id",
       "name": "Alice Santos",
-      "username": "alice_santos"
+      "username": "alice_santos",
+      "email": "alice.santos@gmail.com"
     },
     "card_data": {
       "brand": "VISA",
@@ -22,7 +23,8 @@
     "user": {
       "id": "some_universal_unique_id",
       "name": "Marg Lind",
-      "username": "marglind"
+      "username": "marglind",
+      "email": "marg.lind@gmail.com"
     },
     "card_data": {
       "brand": "VISA",
@@ -41,7 +43,8 @@
     "user": {
       "id": "some_universal_unique_id",
       "name": "Cirilo Bruce",
-      "username": "bruce_wayne"
+      "username": "bruce_wayne",
+      "email": "bruce.wayne@gmail.com"
     },
     "card_data": {
       "brand": "VISA",

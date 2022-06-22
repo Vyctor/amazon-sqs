@@ -35,4 +35,16 @@ const paymentQueue = Consumer.create({
   }),
 });
 
+paymentQueue.on('error', (err) => {
+  console.error('Payment Queue: ', err.message);
+});
+
+paymentQueue.on('processing_error', (err) => {
+  console.error('Payment Queue: Error while processing message', err.message);
+});
+
+paymentQueue.on('empty', () => {
+  console.error('Payment Queue is empty');
+});
+
 export default paymentQueue;
